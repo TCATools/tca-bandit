@@ -35,9 +35,6 @@ class Bandit():
         self.tool = self._get_tool()
 
     def _get_tool(self) -> str:
-        if os.environ.get("PYTHONPATH"):
-            raise Exception("find PYTHONPATH in env!")
-        os.environ["PYTHONPATH"] = PWD
         tool_bin_dir = os.path.join(PWD, "bin")
         path = os.environ["PATH"]
         os.environ['PATH'] =  path + os.pathsep + tool_bin_dir
